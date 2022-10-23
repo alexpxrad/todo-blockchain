@@ -73,7 +73,8 @@ contract ToDoList {
          }
 
          function toggle(address _creator) public {
-            ToDoListApp storage singleUserData = ToDoListApps
+            ToDoListApp storage singleUserData = ToDoListApps[_creator];
+            singleUserData.completed = !singleUserData.completed;
          }
     
 }
